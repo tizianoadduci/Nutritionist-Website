@@ -1,0 +1,3290 @@
+/*
+-Estilos del Inicio
+-Estilos de Turnos
+-Estilos de Sobre Mi
+-Estilos de Embarazo
+-Estilos de Atención Personalizada
+*/
+
+
+/* --- VARIABLES DE COLOR (Paleta del Cliente) --- */
+:root {
+    --primary-purple: #993479;   /* Púrpura principal */
+    --primary-green: #668367;    /* Verde principal */
+    --dark-purple: #9a5c87;
+    --soft-green: #7f9d89;
+    --bg-lavender: #ebe1ee;      /* Fondo suave */
+    --muted-purple: #9d89a3;
+    --pale-green: #9ebbab;
+    --teal-green: #609895;
+    --text-dark: #333333;
+    --text-light: #ffffff;
+    --font-sans: 'Arial', sans-serif;
+    --font-serif: 'Georgia', serif;
+    /*Colores específicos de la sección turnos*/
+    --bg-crema: #f5f1eb;
+    --color-verde-brand: #668367;   
+    --color-verde-dark: #4e634f;    
+    --color-texto: #333333;
+    --color-texto-suave: #666666;
+    --color-borde: #dcd7d0; 
+    /*Fuentes*/
+    --futura: "Futura", "Trebuchet MS", Arial, sans-serif;
+    --nunito: 'Nunito', sans-serif;
+
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    font-family: var(--futura);
+    color: var(--text-dark);
+    background-color: #fff;
+    line-height: 1.6;
+}
+
+body { padding-top: 80px; } 
+
+/* --- ESTILOS GENERALES Y RESPONSIVOS --- */
+h1, h2, h3, h4 {
+    font-family: var(--nunito);
+    color: var(--primary-purple);
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 0 10px; /* Evita cortes en móvil */
+}
+
+/* Ajuste de tamaño texto móvil */
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 2rem; }
+    p { font-size: 0.95rem; }
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Botones Generales */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--primary-green);
+    color: var(--text-light);
+}
+.btn-primary:hover {
+    background-color: var(--teal-green);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    border: 1px solid var(--primary-purple);
+    color: var(--primary-purple);
+    background: transparent;
+}
+.btn-secondary:hover {
+    background-color: var(--primary-purple);
+    color: var(--text-light);
+}
+
+.btn-tertiary {
+    background-color: var(--pale-green);
+    color: var(--text-dark);
+}
+.btn-tertiary:hover {
+    background-color: var(--primary-green);
+    color: #fff;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- HEADER --- */
+.header {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0; left: 0;
+    z-index: 1000;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Contenedor del logo y texto */
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 12px; /* Espacio entre logo y texto */
+}
+
+/* El logo pequeño */
+.logo-img-small {
+    height: 50px; /* Tamaño pequeño y discreto */
+    width: auto;
+}
+
+/* Estilo que imita al anterior h1 */
+.logo-title {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-purple);
+    margin: 0;
+}
+
+.logo { text-align: center; }
+.logo .logo-title { font-size: 1.5rem; margin: 0; color: var(--primary-purple); }
+.logo p { font-size: 0.8rem; color: var(--teal-green); margin: 0; }
+
+
+@media (max-width: 768px) {
+    .logo-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Mantiene los extremos ocupados */
+        width: 100%;
+        gap: 5px;
+    }
+
+    /* Contenedor de los textos */
+    .logo-text-group {
+        order: 1;
+        flex-grow: 1;       /* Le dice al texto que ocupe todo el espacio central disponible */
+        text-align: center; /* Centra el título y el párrafo internamente */
+        margin-left: 60px;  /* Compensamos el ancho del logo para que el centro sea real */
+    }
+
+    .logo-title {
+        font-size: 1.1rem;
+        display: block;
+        white-space: nowrap;
+    }
+
+    .logo p {
+        font-size: 0.75rem;
+        margin: 0;
+    }
+
+    /* Imagen del logo a la derecha */
+    .logo-img-small {
+        order: 2;
+        height: 45px;
+        width: auto;
+        flex-shrink: 0; /* Evita que el logo se aplaste si el texto es largo */
+        margin-right: 0px;
+    }
+}
+
+
+
+/* Navegación Desktop */
+.navbar ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    margin: 0; padding: 0;
+}
+.navbar a.nav-link {
+    color: var(--text-dark);
+    font-weight: 500;
+}
+.navbar a.nav-link:hover { color: var(--primary-purple); }
+
+/* Hamburguesa (Desktop oculto) */
+.hamburger-menu { display: none; }
+
+/* Dropdown */
+.dropdown { position: relative; }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    z-index: 1;
+    top: 100%; left: 0;
+    border-top: 3px solid var(--primary-green);
+}
+.dropdown:hover .dropdown-content { display: block; }
+.dropdown-content a {
+    display: block;
+    padding: 10px 15px;
+}
+.dropdown-content a:hover { background-color: var(--bg-lavender); }
+
+
+/* --- SECCIONES GENERALES --- */
+section { padding: 60px 0; }
+
+
+/* =========================================
+   SECCIÓN HERO CON VIDEO + FOTO
+   ========================================= */
+
+#inicio.hero-video-section {
+    /* Pone la misma imagen que tu video poster */
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: var(--text-light);
+    margin-top: -80px; 
+    padding-top: 80px;
+    background: url('/img/Miniatura-Video-Frutas.png') no-repeat center center;
+    background-size: cover;
+    background-color: #000; /* Fondo negro por seguridad */
+    z-index: 1;
+}
+
+#heroVideoIndex {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0; /* Se mantiene atrás */
+    display: block;
+}
+
+
+
+.video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Esto hace todo el trabajo de centrado y recorte */
+    z-index: -2; 
+    display: block;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.073); 
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    z-index: 1; /* Entre el video y el texto */
+}
+/* 3. Contenedor de Textos y Foto */
+.hero-video-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2;
+    width: 100%;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Textos (Izquierda) */
+.welcome-text-video {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-tag {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--primary-green);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    color: #fff;
+    text-align: left;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 768px) {
+
+    .hero-tag {
+        font-size: 0.8rem;
+        padding: 4px 12px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .hero-title {
+        margin-top: 10px;
+        font-size: 1.5rem;
+        text-align: center;
+        line-height: 1.2;
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    .hero-subtitle {
+        margin-top: 30px;
+        font-size: 1rem;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+
+    /* Agregamos los padres para que la regla sea más fuerte (No me hacía caso el hdp) */
+    .hero-video-content .welcome-text-video .hero-title {
+        font-size: 1.9rem ;
+        text-align: center;
+        line-height: 1.2;
+        display: block;
+    }
+
+    .btn-whatsapp-hero {
+        margin-top: -10px;
+        padding: 10px 25px;
+        font-size: 0.9rem;
+        margin-bottom: -10px;
+    }
+
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #f0f0f0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Foto superpuesta (Derecha) */
+.hero-image-overlay {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.hero-image-overlay img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    box-shadow: 4px 4px 0px 0px rgba(102, 131, 103, 0.5);
+    filter: brightness(1.02); 
+}
+
+
+/* Botón WhatsApp Especial para el Hero */
+.btn-whatsapp-hero {
+    background-color: #668367;
+    color: white;
+    font-size: 1.1rem;
+    padding: 15px 35px;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    transition: 0.3s;
+}
+.btn-whatsapp-hero:hover {
+    background-color: #1da851;
+    transform: translateY(-3px);
+}
+
+/* --- ANIMACIONES CSS --- */
+
+/* Estado inicial y base para el retorno */
+.animate-hidden { 
+    opacity: 0; 
+    transition: opacity 2s ease-out, transform 2s ease-out; /*OJO, esto afecta a todas las animate-hidden */
+}
+
+/* Cuando es visible, la animación se dispara */
+.animate-down.visible { animation: fadeInDown 2s ease forwards; }
+.animate-left.visible { animation: fadeInLeft 2s ease forwards; }
+.animate-right.visible { animation: fadeInRight 2s ease forwards; }
+.animate-up.visible { animation: fadeInUp 2s ease forwards; }
+
+/* Cuando NO es visible, podemos resetear el estado 
+   para que no se vea el "salto" al salir */
+.animate-hidden:not(.visible) {
+    opacity: 0;
+    /* Esto ayuda a que el elemento "vuelva" a su posición original 
+       fuera de pantalla para re-animarse */
+    transform: none; 
+}
+
+/* Keyframes */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+
+/* ---ACOMPAÑAMIENTOS--- */
+
+.subtituloAcompañamientos {
+    margin-top: 90px; /* Usamos margin en lugar de padding para no estirar el área de click */
+    margin-bottom: 60px;
+    opacity: 0;
+    transform: translateY(40px); 
+    transition: all 2s ease-out;
+    text-align: center;
+    width: 100%; /* Asegura que el h2 ocupe todo el ancho */
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .subtituloAcompañamientos {
+        font-size: 1.8rem;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+}
+
+
+.subtituloAcompañamientos.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- GRID Y CARDS MOBILE FIX --- */
+.plans-grid {
+    display: grid;
+    /* Bajamos el min-width de 280 a 250 para que entre cómodo en pantallas de 320px */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 25px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.mi-rol-docente-section { background-color: #fff; }
+
+.plan-card {
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+}
+.plan-card img {
+    height: 180px; width: 100%; object-fit: cover;
+    border-radius: 5px; margin-bottom: 15px;
+}
+.plan-card h3 { 
+    font-size: 1.2rem; 
+    color: var(--primary-green); 
+    margin-bottom: 10px;
+}
+
+.plan-card p {
+    font-size: 1rem; 
+    color: var(--text-dark); 
+    margin-bottom: 15px;
+}
+
+
+@media (max-width: 768px) {
+    .mi-rol-docente-section .container {
+        padding-right: 10px !important;
+        overflow: hidden; /* Evita que cualquier hijo se escape */
+    }
+
+    .plan-card {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%; /* La card se adapta al container */
+        box-sizing: border-box;
+    }
+
+    .plan-card h3 {
+        /* Evita que títulos largos como "Acompañamiento" empujen la card hacia afuera */
+        word-break: break-word; 
+        font-size: 1.1rem;
+    }
+}
+
+
+
+/* --- SECCIÓN CONTACTO Y NEWSLETTER --- */
+.contact-section { 
+    background-color: var(--bg-lavender); 
+    padding: 60px 20px;
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 30px 10px;
+    }
+}
+
+.contact-content { 
+    display: flex; 
+    gap: 40px; 
+    max-width: 1200px; /* Para que no se estire de más en pantallas grandes */
+    margin: 0 auto;
+}
+
+.contact-form { 
+    flex: 2; 
+    text-align: left; /* título y el botón del newsletter */
+}
+
+.contact-form h2 { 
+    font-size: 2.7rem;
+    text-align: left;
+    margin-left: -10px;
+}
+
+.contact-form p { 
+    margin-bottom: 20px; 
+    font-size: 1rem; 
+    color: var(--text-dark);
+    text-align: left;
+}
+
+.contact-info { 
+    flex: 1; 
+    background: #fff; 
+    padding: 20px;
+    gap: 40px; 
+    border-radius: 10px; 
+    height: fit-content; 
+    /* Agregamos esto para bajar la caja en desktop */
+    margin-top: 175px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+
+@media (max-width: 768px) {
+    .contact-content { flex-direction: column; }
+    .contact-form, .contact-info { width: 100%; }
+    .contact-form { 
+        margin-bottom: 5px;
+        text-align: center; /* título y el botón del newsletter */    
+    }
+    .contact-form h2{ 
+        font-size: 2.9rem;
+        text-align: center;
+    }
+    .contact-form p { 
+        text-align: center;
+        font-size: 1rem; 
+    }
+    .input-group{
+        margin-top: 10px;
+    }
+    .contact-info { 
+        padding: 10px; 
+        margin-top: 0;
+        }
+    .contact-info p{
+        font-size: 0.9rem;
+        margin-top: 10px; 
+    }    
+    /* Centrado de iconos sociales en móvil */
+    .contact-info .social-icons { 
+    display: flex;         
+    justify-content: center; /* ESTO es lo que centra los iconos horizontalmente */
+    gap: 15px;             /* El espacio entre los iconos */
+    margin-top: 20px;      /* El espacio respecto al texto de arriba */
+    width: 100%;           /* Para que ocupe todo el ancho y pueda centrar bien */
+    }
+
+}
+
+/* Estilos de los Formularios */
+.contact-form form { 
+    display: flex; 
+    flex-direction: column; 
+    max-width: 500px; /* Limita el ancho del form para que no sea gigante */
+    margin: 0; 
+}
+
+.contact-form label { 
+    margin-top: 2px; 
+    font-weight: bold; 
+    text-align: left; /* El texto del label queda sobre el input a la izquierda */
+}
+
+/* Estilo unificado para inputs y textarea */
+.contact-form input[type="text"], 
+.contact-form input[type="email"], 
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: var(--font-body);
+    box-sizing: border-box; /* Evita que el padding ensanche el input */
+}
+
+.contact-form button { 
+    margin: 0 auto 0; /* Centra el botón y le da espacio arriba */
+    width: fit-content; 
+    padding: 12px 30px;
+}
+
+/* Estilo específico para el Checkbox de Privacidad */
+.privacy-checkbox {
+    margin: 20px 0;
+    display: flex;
+    align-items: flex-start; /* Alinea el checkbox con la primera línea de texto */
+    text-align: left;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: #555;
+}
+.privacy-checkbox {
+    display: flex;
+    align-items: center; /* Alinea el checkbox con el texto */
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.privacy-checkbox input {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    cursor: pointer;
+    accent-color: #668367; /* Color post-clickeo)*/
+}
+
+.privacy-checkbox label {
+    font-size: 0.8rem; /* 0.5rem es MUY chiquito, casi ilegible. 0.8rem es ideal */
+    font-weight:normal ; /* Normalmente el "Acepto..." no va en negrita */
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+
+
+.privacy-link {
+    color: var(--color-verde-brand); /* Usa tu color verde */
+    text-decoration: underline;    /* Fuerza el subrayado */
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.privacy-link:hover {
+    color: var(--primary-purple); /* Cambia de color al pasar el mouse */
+    text-decoration: none;        /* Opcional: quita el subrayado al pasar el mouse */
+}
+
+/* Redes Sociales */
+.social-icons { margin-top: 20px; font-size: 1.5rem; display: flex; gap: 15px; }
+.social-icons a { color: var(--primary-purple); transition: 0.3s; }
+.social-icons a:hover { transform: scale(1.1); }
+
+
+
+
+/* --- FOOTER --- */
+footer {
+    background-color: #668367; /* TU VERDE ELEGIDO */
+    color: #ffffff; /* Texto blanco para que se lea bien sobre el verde */
+    padding: 40px 0 0;
+    position: relative;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex; 
+    justify-content: space-between; 
+    gap: 30px; 
+    padding-bottom: 30px;
+    /* Usamos el verde salvia (#7f9d89) para la línea divisoria. 
+       Es más suave que un gris y queda "en familia". */
+    border-bottom: 1px solid #7f9d89; 
+}
+
+.footer-brand img{
+    max-width: 150px; /* O el tamaño que prefieras */
+    display: block;   /* Permite que margin: auto funcione */
+    margin: 0 auto;   /* Centra horizontalmente */
+    height: auto;     /* Mantiene la proporción */
+}
+
+/* TÍTULOS DEL FOOTER */
+.footer-about h4, .useful-links h4 { 
+    color: #ebe1ee; /* El lavanda pálido*/
+    margin-bottom: 10px; 
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.footer-about {
+    flex: 0 0 28%; /* Ocupa exactamente el 40% y no se expande más */
+    margin-left: -80px;
+}
+
+.footer-about h4{
+    text-align: left;
+}
+
+.footer-about p{
+    text-align: left;
+    line-height: 1.5;
+}
+
+/* LOGO */
+.footer-brand img { 
+    max-width: 150px; 
+    display: block; /* Ayuda al centrado */
+}
+
+/* ENLACES */
+.useful-links ul { list-style: none; padding: 0; }
+.useful-links li { margin-bottom: 8px; }
+
+.useful-links a {
+    color: #ffffff; /* Enlaces en blanco */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.useful-links a:hover { 
+    color: #993479; /* ALERTA DE BRANDING: Al pasar el mouse, se pone VIOLETA */
+    font-weight: 500;
+}
+
+/* Centrado de iconos sociales en móvil */
+@media (max-width: 768px) {
+
+    .social-icons-footer { 
+    display: flex;         
+    justify-content: center; /* ESTO es lo que centra los iconos horizontalmente */
+    gap: 15px;             /* El espacio entre los iconos */
+    margin-top: 20px;      /* El espacio respecto al texto de arriba */
+    width: 100%;           /* Para que ocupe todo el ancho y pueda centrar bien */
+    }
+    
+}
+
+
+.social-icons-footer { margin-top: 20px; font-size: 1.5rem; display: flex; gap: 15px; }
+.social-icons-footer a { color: #ebe1ee; transition: 0.3s; }
+.social-icons-footer a:hover { transform: scale(1.1); }
+
+
+/* Footer Bottom + FIX DE SUPERPOSICIÓN */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    font-size: 0.8rem;
+    position: relative;
+    padding-right: 100px; 
+    color: #ffffff; /* El texto del copyright en lavanda pálido */
+}
+
+/* BOTÓN VOLVER ARRIBA */
+.scroll-to-top {
+    background-color: #993479; /* El botón violeta queda genial sobre el fondo verde */
+    color: #fff;
+    padding: 8px 15px;
+    font-size: 0.8rem;
+    margin-left: 20px;
+    border-radius: 5px; /* Un pequeño borde redondeado queda más moderno */
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.scroll-to-top:hover {
+    background-color: #9a5c87; /* Un violeta un pelín más claro al tocarlo */
+}
+
+/* --- BOTÓN WHATSAPP --- */
+
+/* Estado normal (Flotante) */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #668367;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    z-index: 9999;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: none;
+}
+
+/* Estado Detenido: Se activa con JS cuando tocas el footer */
+.whatsapp-btn.at-footer {
+    position: absolute;
+    bottom: 106px; /* Posición de ajuste en el footer */
+    right: 30px;
+    top: auto;
+}
+
+
+/* ANIMACIÓN: HAZ DE LUZ SOLO EN BORDE */
+.wa-border-beam {
+    position: absolute;
+    top: -6px; left: -6px; right: -6px; bottom: -6px;
+    border-radius: 50%;
+    z-index: -1;
+    
+    background: conic-gradient(
+        from 0deg, 
+        transparent 0%, 
+        transparent 70%, 
+        rgba(255, 255, 255, 0.9) 100%
+    );
+    -webkit-mask: radial-gradient(farthest-side, transparent 85%, black 86%);
+            mask: radial-gradient(farthest-side, transparent 85%, black 86%);
+    animation: spinBeam 15s linear infinite;
+}
+
+@keyframes spinBeam {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Clase que se activará cuando el botón toque el footer */
+.whatsapp-btn.footer-active {
+    background-color: #993479 !important; /* Tu violeta principal */
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transform: scale(0.9); /* Opcional: que crezca un poquito al cambiar */
+}
+
+/* Aseguramos una transición suave */
+.whatsapp-btn {
+    transition: background-color 1s ease, transform 1s ease;
+}
+
+
+
+.copyright-text {
+    margin-left: 100px; /* Empuja el texto hacia la derecha */
+}
+
+/* Esto subraya el enlace del nombre del programador en el footer */
+.footer-bottom a {
+    text-decoration: underline;
+    color: inherit; /* Mantiene el color del texto que lo rodea */
+}
+
+
+
+
+/* --- MOBILE / TABLET (Max 768px) AJUSTES GENERALES HASTA ACÁ...--- */
+@media (max-width: 768px) {
+    
+    /* Ajustes generales */
+    .contact-content, .footer-content, .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        align-items: center; /*Centra elementos como el logo*/
+    }
+
+    .footer-brand img { 
+        margin: 0 auto 5px; /* Centra la imagen horizontalmente */
+    }
+    .footer-about h4{
+    text-align: center;
+    }
+
+    /* AJUSTE PARA EL NUEVO HERO EN MÓVIL */
+        #inicio.hero-video-section {
+        /* Pone la versión mobile de la imagen */
+        background: url('/img/Miniatura-Video-Frutas-Mobile.png') no-repeat center center;
+        background-size: cover;
+        height: auto;
+        padding-bottom: 60px;
+    }
+        
+    
+    .hero-video-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-title {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+    .hero-image-overlay img {
+        max-width: 250px;
+        margin-top: 20px;
+    }
+    
+    /* Footer bottom en mobile */
+    .footer-bottom { padding-right: 30px; gap: 15px; }
+    .mission-vision { flex-direction: column; }
+
+    /* Menú Hamburguesa a la izquierda */
+    .navbar-container {
+        padding: 0 15px;
+        justify-content: space-between;
+    }
+
+    .hamburger-menu {
+        display: block;
+        background: none; border: none; cursor: pointer;
+        z-index: 1001; order: -1;
+        margin-left: 10px;
+    }
+    .bar {
+        display: block; width: 25px; height: 3px; margin: 5px auto;
+        background-color: var(--primary-purple); transition: 0.3s;
+    }
+
+    /* Logo centrado compensando el botón */
+    .logo { flex-grow: 1; margin-left: -30px; }
+
+    /* Estilo del menú desplegable móvil */
+    .navbar ul {
+        position: fixed;
+        top: 80px; left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px + 1px);
+        background-color: var(--bg-lavender);
+        flex-direction: column;
+        align-items: center;
+        padding-top: 30px;
+        transition: 0.3s ease;
+        overflow-y: auto;
+    }
+    .navbar ul.active { left: 0; }
+    .navbar ul li { width: 100%; text-align: center; margin: 15px 0; }
+
+    /* Dropdown móvil */
+    .dropdown-content {
+        position: relative;
+        width: 100%;
+        background-color: #668367;
+        border: none;
+        box-shadow: none;
+        display: none !important;
+        margin-top: -50px; 
+    }
+    .dropdown-content a {
+        padding: 12px 0;
+        color: #fff !important;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    .dropdown-content.show-dropdown {
+        display: block !important;
+    }
+
+    /* Animación X de hamburguesa */
+    .hamburger-menu.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger-menu.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger-menu.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+
+/* Esto aplica solo al texto del checkbox de privacidad */
+.privacy-checkbox label {
+    font-size: 0.7rem; 
+    font-weight:normal ; 
+    margin-top: 1px; /* Quitamos el margen superior que tienen los otros labels */
+    cursor: pointer;
+}
+
+.footer-about {
+    margin-left: 0; /* Quitamos el margen negativo en mobile */
+    text-align: center;
+}
+
+.footer-about p{
+    text-align: center;
+}
+
+
+.copyright-text {
+    margin-left: 0; /* Quitamos el margen en mobile */
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------------------- */
+/* Página TURNOS */
+/* ----------------------------- */
+
+
+.timeline-section {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 30px;
+}
+
+.timeline-section h2.section-title {
+    text-align: center;
+    color: var(--color-verde-brand);
+    margin-bottom: 50px;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Contenedor de la Línea */
+.timeline-container {
+    border-left: 2px solid var(--color-borde);
+    padding-left: 40px; /* Mantenemos este espacio */
+    position: relative;
+    margin-bottom: 60px;
+}
+
+/* Item Individual */
+.timeline-item {
+    margin-bottom: 30px;
+}
+
+/* Encabezado (Clickable) */
+.timeline-header {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    padding: 10px 0;
+    transition: all 0.3s ease;
+}
+
+.timeline-header:hover .step-title {
+    color: var(--color-verde-brand);
+}
+
+/* Bolitas con Números */
+.timeline-marker {
+    position: absolute;
+    /* CÁLCULO EXACTO: -41px (eje central) - 16px (mitad del ancho) = -57px */
+    left: -57px; 
+    width: 32px;
+    height: 32px;
+    
+    background-color: var(--bg-crema);
+    border: 2px solid var(--color-verde-brand);
+    color: var(--color-verde-brand);
+    border-radius: 50%;
+    
+    /* Flexbox para centrar el número perfectamente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    font-weight: bold;
+    
+    /* CORRECCIÓN ÓPTICA DEL NÚMERO */
+    line-height: 1; /* Elimina espacios extra arriba/abajo */
+    padding-top: 2px; /* Empuja el número apenas hacia abajo para que se vea centrado al ojo */
+    
+    z-index: 2;
+    transition: all 0.8s ease;
+}
+
+/* Espacio entre párrafos dentro de la línea de tiempo */
+.timeline-content p {
+    margin-bottom: 15px; /* Espacio entre párrafos */
+    line-height: 1.6;    /* Mejora la lectura separando un poco los renglones */
+}
+
+/* El último párrafo no necesita margen abajo */
+.timeline-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Estado Activo (Bola rellena) */
+.timeline-item.active .timeline-marker {
+    background-color: var(--color-verde-brand);
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 0 0 4px rgba(102, 131, 103, 0.2);
+    max-height: 800px;
+}
+
+.step-title {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--color-texto);
+    flex-grow: 1;
+    transition: color 0.5s ease;
+}
+
+/* Flechita */
+.chevron-icon {
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid var(--color-texto-suave);
+    border-bottom: 2px solid var(--color-texto-suave);
+    transform: rotate(45deg); 
+    transition: transform 0.6s ease;
+}
+
+.timeline-item.active .chevron-icon {
+    transform: rotate(225deg); 
+    border-color: var(--color-verde-brand);
+}
+
+/* Contenido Desplegable */
+.timeline-content {
+    max-height: 0;
+    overflow: hidden;
+    padding-left: 5px;
+    transition: max-height 0.8s ease-out, opacity 0.4s ease;
+    opacity: 0;
+    color: var(--color-texto-suave);
+    line-height: 1.6;
+}
+
+.timeline-item.active .timeline-content {
+    max-height: 500px; 
+    opacity: 1;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+/*.timeline-img {
+    width: 100%;          
+    max-width: 670px;     
+    height: auto;         
+    border-radius: 12px;  
+    margin-top: 15px;     
+    display: block;       
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+}
+    Lo dejo comentado, por si quiero agregar estilo a la imagen.
+*/ 
+
+
+/* Tapas de la línea (Inicio y Fin) */
+.timeline-end-cap {
+    position: absolute;
+    width: 8px; 
+    height: 8px;
+    background-color: var(--color-borde); 
+    border-radius: 50%;
+    left: -5.1px; 
+    
+    z-index: 1; 
+}
+
+/* Ajustes verticales de las tapas (para que no queden pegadas al borde) */
+.timeline-end-cap.top { top: -5px; }
+.timeline-end-cap.bottom { bottom: -5px; }
+
+
+/* --- BOTÓN DE ACCIÓN (Turnitos) --- */
+.turnos-action-area {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid var(--color-borde);
+}
+
+.btn-turnos {
+    display: inline-block;
+    background-color: var(--color-verde-brand);
+    color: white;
+    padding: 18px 40px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border-radius: 50px; /* Bordes redondeados modernos */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 131, 103, 0.3);
+}
+
+.btn-turnos:hover {
+    background-color: var(--color-verde-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(102, 131, 103, 0.4);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .timeline-container {
+        padding-left: 30px; /* El padding se reduce en móvil */
+        /* Nuevo eje central en móvil: 30px + 1px = -31px */
+    }
+
+    .timeline-marker {
+        width: 28px;
+        height: 28px;
+        font-size: 0.9rem;
+        /* Cálculo Móvil: -31px (eje) - 14px (mitad de 28) = -45px */
+        left: -45px; 
+        padding-top: 1px; /* Ajuste óptico menor para móvil */
+    }
+
+    .timeline-end-cap {
+        /* Cálculo Móvil: -31px (eje) - 4px (mitad de 8) = -35px */
+        left: -4.7px;
+    }
+    .step-title {
+        font-size: 1rem;
+    }
+    .timeline-item.active .timeline-content {
+    /* Ajustamos el max-height para móviles */
+    max-height: 600px; 
+    padding: 10px; /* Le damos aire arriba y abajo al abrirse */
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------------------- */
+/* Página SOBRE MI */
+/* ----------------------------- */
+
+.sobre-mi-hero {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--primary-green);
+    color: var(--text-light);
+    font-family: var(--font-serif);
+    overflow: hidden;
+}
+
+/* La imagen ahora se posiciona por debajo del texto */
+.hero-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace lo mismo que background-size: cover */
+    object-position: center;
+    z-index: 0;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.sobre-mi-hero .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(0,0,0,0.55) 0%,
+        rgba(0,0,0,0.35) 40%,
+        rgba(0,0,0,0.1) 70%
+    );
+    z-index: 0;
+}
+
+/* --- KEYFRAMES --- */
+@keyframes fadeUpAnim {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeFromRightAnim {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeFromLeftAnim {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* --- CONTENIDO GENERAL --- */
+.sobre-mi-hero .contenido > * {
+    opacity: 0;
+    z-index: 1;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.45);
+    position: relative; 
+}
+
+/* Título Desktop */
+.sobre-mi-hero .titulo {
+    font-size: 2.5rem;
+    text-align: right;
+    right: 250px; 
+    top: -50px;
+    font-weight: 800;
+}
+
+/* Animación activada por JS */
+.sobre-mi-hero.visible .titulo {
+    animation: fadeFromRightAnim 4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: 0.3s;
+}
+
+.sobre-mi-hero .titulo span {
+    font-weight: 600;
+}
+
+/* Subtítulo Desktop */
+.sobre-mi-hero .subtitulo {
+    font-size: 1.1rem;
+    color: #f5f1eb;
+    margin-bottom: 30px;
+    left: 275px; 
+}
+
+.sobre-mi-hero.visible .subtitulo {
+    animation: fadeUpAnim 2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: 0.9s;
+}
+
+/* Texto Desktop */
+.sobre-mi-hero .texto {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #f5f1eb;
+    margin-bottom: 18px;
+    max-width: 400px;
+    width: 100%;
+    left: 275px; 
+}
+
+.sobre-mi-hero.visible .texto {
+    animation: fadeUpAnim 2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: 1.5s;
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+
+    .sobre-mi-hero {
+        background-attachment: scroll; /* Los móviles sufren con 'fixed' */
+        background-position: 50% 20%;  /* Ajusta el foco para que no se pierda calidad en lo importante */
+    }
+
+    .sobre-mi-hero .overlay {
+        background: linear-gradient(
+            90deg,
+            rgba(0,0,0,0.65) 0%,
+            rgba(0,0,0,0.4) 25%,
+            rgba(0,0,0,0.1) 45%,
+            rgba(0,0,0,0) 70%
+        );
+    }
+
+    .sobre-mi-hero .contenido {
+        margin-left: 0;
+        padding: 120px 25px 80px;
+        text-align: left;
+    }
+
+    .sobre-mi-hero .titulo {
+        font-size: 2.2rem !important;
+        text-align: left;
+        right: auto; 
+        left: -10px;
+        top: -150px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        -webkit-text-stroke: 0.4px rgba(238, 0, 255, 0.523);
+        color: #ebe1ee;
+    }
+
+    .sobre-mi-hero.visible .titulo {
+        animation: fadeFromLeftAnim 4s cubic-bezier(0.22, 1, 0.36, 1) forwards !important;
+    }
+
+    .sobre-mi-hero .subtitulo {
+        font-size: 1rem;
+        left: auto; 
+        top: 20px;
+        max-width: 480px;
+        margin-left: auto;
+        text-align: left;
+    }
+
+    .sobre-mi-hero.visible .subtitulo {
+        animation: fadeUpAnim 4s cubic-bezier(0.22, 1, 0.36, 1) forwards !important;
+    }
+
+    .sobre-mi-hero .texto {
+        left: auto; 
+        top: 30px;
+    }
+
+    .sobre-mi-hero.visible .texto {
+        animation: fadeUpAnim 4s cubic-bezier(0.22, 1, 0.36, 1) forwards !important;
+    }
+}
+
+/* --- CORTE INFERIOR --- */
+.sobre-mi-hero .corte {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 140px;
+    background: #668367;
+    clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 100%);
+    z-index: 3;
+    transform: scale(1.05); 
+    transform-origin: bottom center;
+}
+
+/* --- SECCIÓN ENFOQUE --- */
+.enfoque-metodologia {
+    background-color: #668367;
+    color: #f5f1eb;
+    padding: 100px 0;
+    font-family: "Georgia", serif;
+}
+
+.enfoque-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.enfoque-texto h2 {
+    font-size: 2.5rem;
+    margin: 15px 0 25px;
+    color: #fff;
+    font-weight: 400;
+}
+
+.enfoque-texto .tag {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.enfoque-texto p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #e0dcd5;
+}
+
+.enfoque-decoracion {
+    height: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+@media (max-width: 900px) {
+    .enfoque-metodologia {
+        position: relative;
+        /* Quitamos el margin-top negativo si no funcionó */
+        margin-top: 0;
+        margin-bottom: -1px;
+        padding-bottom: 10px; 
+        z-index: 5;
+    }
+
+    /* ESTE ES EL SELLADOR DEFINITIVO */
+    .enfoque-metodologia::before {
+        content: "";
+        position: absolute;
+        top: -5px; /* Sube para solaparse con el Hero */
+        left: 0;
+        width: 100%;
+        height: 10px; /* Un bloque pequeño pero sólido */
+        background-color: #668367; /* El mismo verde */
+        z-index: -1; /* Se queda justo detrás del contenido pero tapa el hueco */
+    }
+
+    .sobre-mi-hero .corte {
+        bottom: -2px; /* Forzamos un poquito más hacia abajo */
+        height: 120px;
+        /* El scale a veces causa la línea, vamos a probar quitándolo o aumentándolo */
+        transform: scaleX(1.1); 
+    }
+
+    .enfoque-grid {
+        margin-top: -10px;
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+    .enfoque-texto h2 { font-size: 2rem; }
+    .enfoque-decoracion { display: none; }
+}
+
+
+body.page-sobre-mi #wa-btn {
+    background-color: #993479;
+}
+
+#sobremi-footer {
+    margin-top: -1px;
+}
+
+
+.banner-separador {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Altura en desktop */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Clave: hace que la imagen se comporte como background-cover */
+    z-index: 1;
+}
+
+
+
+/* Ajuste para celulares */
+@media (max-width: 768px) {
+    .banner-separador {
+        height: 250px; /* Más pequeña en móvil */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------------------- */
+/* Página Embarazo */
+/* ----------------------------- */
+
+/* --- CONFIGURACIÓN GENERAL DEL HERO --- */
+.hero-video-section-embarazo {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ocupa toda la pantalla */
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    overflow: hidden; /* Evita scrollbars si el video se sale */
+    color: #fff; /* Todo el texto en blanco */
+    font-family: "Quicksand", sans-serif;
+}
+
+/* --- VIDEO DE FONDO --- */
+.video-bg-embarazo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    /* Truco para centrar el video perfectamente y que el recorte sea parejo */
+    transform: translate(-50%, -50%); 
+    object-fit: cover; 
+    z-index: 0;
+    background: url('/img/Miniatura-Video-Embarazo-1080p.png') no-repeat center center;
+    background-size: cover;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.video-overlay-embarazo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Aumenté un poco la opacidad para que el texto blanco resalte más */
+    background-color: rgba(0, 0, 0, 0.18); 
+    backdrop-filter: blur(3px); /* Un poco de blur ayuda a la lectura */
+    -webkit-backdrop-filter: blur(3px);
+    z-index: 0;
+}
+
+/* --- CONTENIDO --- */
+.hero-video-content-embarazo {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; /* Centra el contenedor padre */
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* ¡ESTO CENTRA HORIZONTALMENTE! */
+    justify-content: center; /* ¡ESTO CENTRA VERTICALMENTE! */
+    min-height: 100vh;      /* Asegura que use todo el alto para centrar */
+}
+
+.hero-text-wrapper {
+    width: 100%;
+    max-width: 900px; /* Un poco más ancho para que el H2 no salte de línea tanto */
+    text-align: center; /* Alinea el texto (H2, H3 y P) al centro */
+}
+/* Contenedor de las dos columnas */
+.sub-text-container {
+    display: flex;
+    justify-content: center;
+    gap: 0; /* Quitamos gap para usar bordes */
+    margin-top: 130px;
+    width: 100%;
+}
+
+.sub-text-item {
+    flex: 1;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Línea divisoria central */
+.left-column {
+    border-right: 1px solid rgba(235, 225, 238, 0.4); /* Línea sutil color lila */
+    text-align: right; /* Opcional: para que el texto "mire" a la línea */
+}
+
+.right-column {
+    text-align: left;
+}
+/* 1. Quitamos el borde físico de la columna */
+.left-column {
+    position: relative; /* Necesario para posicionar la línea */
+    border-right: none; /* Eliminamos el borde anterior */
+    text-align: right;
+}
+
+/* 2. Creamos la línea con un pseudo-elemento */
+.left-column::after {
+    content: "";
+    position: absolute;
+    right: 0;           /* Pegado al borde derecho de la columna izq */
+    top: 6%;           /* Empieza un 10% hacia abajo (la acorta arriba) */
+    height: 92%;        /* Altura total de la línea (ajusta este % a tu gusto) */
+    width: 1px;         /* Grosor de la línea */
+    background-color: rgba(235, 225, 238, 0.4); /* Tu color lila con transparencia */
+    z-index: 1;
+}
+
+/* 3. Aseguramos que en Mobile la línea desaparezca o cambie */
+@media (max-width: 768px) {
+
+    .hero-text-wrapper {
+        text-align: center; /* Centramos todo en mobile */
+        margin-top: -50px;
+    }
+
+    .hero-text-wrapper h2{
+        margin-top: -30px;
+        margin-bottom: -60px !important;
+    }
+
+    .header-box{
+        margin-top: -30px;
+    }
+
+    .left-column::after {
+        display: none; /* La quitamos en mobile para que no quede una línea vertical rara */
+    }
+    
+    .left-column {
+        border-bottom: 1px solid rgba(235, 225, 238, 0.3); /* Línea horizontal en mobile */
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+    }
+}
+
+/* CAJA DE ENCABEZADO: 
+   Aquí es donde igualamos las alturas para que el p empiece igual 
+   y el h3 corto se centre respecto al h3 largo */
+.header-box {
+    min-height: 80px; /* Ajusta según el tamaño de tu fuente para que quepan 2 líneas */
+    display: flex;
+    align-items: center; /* Centra verticalmente el H3 */
+    margin-bottom: 20px;
+}
+
+.left-column .header-box {
+    justify-content: flex-end; /* Alinea el H3 largo a la derecha (hacia la línea) */
+}
+
+.right-column .header-box {
+    justify-content: flex-start; /* Alinea el H3 corto a la izquierda (hacia la línea) */
+}
+
+
+
+/* --- AJUSTES MOBILE --- */
+@media (max-width: 768px) {
+    .sub-text-container {
+        flex-direction: column;
+    }
+    
+    .left-column {
+        border-right: none;
+        border-bottom: 1px solid rgba(235, 225, 238, 0.3);
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    
+    .right-column {
+        text-align: center;
+    }
+
+    .header-box {
+        min-height: auto;
+        justify-content: center !important;
+    }
+}
+
+/* --- ESTILOS DE TIPOGRAFÍA --- */
+.hero-video-content-embarazo h2 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 30px; /* Espacio con lo de abajo */
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    margin-top: -80px;
+
+}
+
+/* Ajustes de tipografía específicos para que no se pisen */
+.hero-video-content-embarazo h3 {
+    font-size: 1.35rem;
+    margin: 0; /* Quitamos márgenes para que el flex-box lo controle */
+    color: #ebe1ee;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.hero-video-content-embarazo p {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* --- ANIMACIONES --- */
+
+/* Clase para que aparezca desde la derecha (Titulo) */
+.animate-right {
+    opacity: 0; /* Empieza invisible */
+    animation: slideInRight 1.5s ease-out forwards; /* 1.5s de duración */
+}
+
+/* Clase para que aparezca desde la izquierda (Subtitulo y texto) */
+.animate-left {
+    opacity: 0;
+    animation: slideInLeft 1.5s ease-out forwards;
+    animation-delay: 0.5s; /* Empieza un poquito después del título */
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px); /* Empieza 100px a la derecha */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* Termina en su lugar */
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px); /* Empieza 100px a la izquierda */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* Termina en su lugar */
+    }
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+    .hero-video-section-embarazo {
+        /* En mobile, a veces 100vh da problemas con la barra del navegador */
+        /* Usamos svh si el navegador lo soporta, o 100vh como fallback */
+        height: 100vh; 
+        text-align: center; /* Centramos el texto en mobile */
+    }
+
+    .hero-video-content-embarazo {
+        align-items: center; /* Centrar el bloque */
+    }
+
+    .sub-text-container {
+        flex-direction: column; /* En mobile, uno arriba del otro */
+        text-align: center;     /* Centramos el texto en mobile */
+        gap: 30px;
+    }
+    
+    .hero-video-content-embarazo h2 {
+        margin-top: 0; /* Quitamos el margen negativo en mobile */
+        font-size: 2.2rem;
+    }
+
+    .hero-video-content-embarazo h3 {
+        font-size: 1.1rem;
+    }
+
+    .hero-video-content-embarazo p {
+        font-size: 1rem;
+    }
+
+    /* Ajuste del video en mobile */
+    .video-bg-embarazo {
+        /* Esto asegura que el centro del video sea el foco */
+        object-position: center center; 
+    }
+}
+
+
+
+
+
+/* Importar fuente */
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap");
+
+/* Configuración de la Sección General */
+.queincluye-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #ebe1ee; /* Tu color de fondo claro */
+    font-family: "Quicksand", sans-serif;
+    padding: 50px 20px;
+    gap: 50px;
+    overflow: hidden; /* Para evitar scrollbars por las animaciones */
+}
+
+.main-title {
+    font-size: 2.5rem;
+    color: #993479; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* --- ESTILO DE LOS 4 CÍRCULOS (Adaptado del Login) --- */
+.cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px; /* Espacio entre círculos */
+    max-width: 1400px; /* Ancho suficiente para los 4 */
+    width: 100%;
+}
+
+.organic-ring {
+    position: relative;
+    width: 260px; /* Tamaño más pequeño que el login original */
+    height: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Las líneas animadas */
+.organic-ring i {
+    position: absolute;
+    inset: 0;
+    border: 2px solid var(--clr);
+    transition: 0.5s;
+}
+
+.organic-ring i:nth-child(1) {
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+    animation: animate 30s linear infinite;
+}
+
+
+.organic-ring i:nth-child(2) {
+    border-radius: 41% 44% 56% 59% / 38% 62% 63% 37%;
+    animation: animate 20s linear infinite;
+}
+
+/*
+.organic-ring i:nth-child(3) {
+    border-radius: 41% 44% 56% 59% / 38% 62% 63% 37%;
+    animation: animate2 20s linear infinite;
+}
+*/
+
+/* Efecto Hover: se iluminan al pasar el mouse */
+.organic-ring:hover i {
+    border: 6px solid var(--clr);
+    filter: drop-shadow(0 0 20px var(--clr));
+}
+
+/* Contenido dentro del círculo */
+.organic-ring .content {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #4a4a4a; /* Texto gris oscuro para lectura */
+    z-index: 10;
+}
+
+.organic-ring .content h3 {
+    color: var(--clr);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.organic-ring .content p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+/* Animaciones de rotación */
+@keyframes animate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes animate2 {
+    0% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
+}
+
+
+/* --- RETRASOS DE ANIMACIÓN --- */
+
+/* El 1ro arranca normal (0s delay), así que no tocamos nada */
+
+/* 2do Círculo: Retraso de 0.5s */
+.cards-grid .organic-ring:nth-child(2) i {
+    animation-delay: 1s;
+}
+
+/* 3er Círculo: Retraso de 1s */
+.cards-grid .organic-ring:nth-child(3) i {
+    animation-delay: 2s;
+}
+
+/* 4to Círculo: Retraso de 1.5s */
+.cards-grid .organic-ring:nth-child(4) i {
+    animation-delay: 3s;
+}
+
+
+/* --- SECCIÓN PLUS (Rectángulo Estilo Orgánico) --- */
+.plus-container {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.plus-box {
+    position: relative;
+    width: 100%;
+    padding: 40px;
+    border-radius: 30px; /* Bordes redondeados pero rectangulares */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.4); /* Fondo semitransparente */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* Bordes del rectángulo que se mueven (Morphing) */
+.plus-box span {
+    position: absolute;
+    top: -10px; left: -10px; right: -10px; bottom: -10px;
+    border: 2px solid var(--clr);
+    border-radius: 40px;
+    animation: morphBorder 25s ease-in-out infinite alternate;
+    z-index: 0;
+}
+
+.plus-box span:nth-child(2) {
+    top: -5px; left: -5px; right: -5px; bottom: -5px;
+    border-color: var(--clr2);
+    animation-duration: 15s;
+    animation-direction: alternate-reverse;
+}
+
+.plus-box:hover span {
+    border-width: 4px;
+    filter: drop-shadow(0 0 10px var(--clr));
+}
+
+.plus-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+}
+
+.plus-content h3 {
+    color: var(--clr);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.plus-content p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Animación para el rectángulo (Deforma suavemente los bordes) */
+@keyframes morphBorder {
+    0% { border-radius: 30px; transform: scale(1); }
+    50% { border-radius: 50% 20% 50% 20%; transform: scale(1.02); }
+    100% { border-radius: 20% 50% 20% 50%; transform: scale(1); }
+}
+
+/* Responsive: Celulares */
+@media (max-width: 768px) {
+    .cards-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .main-title {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .plus-box {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+
+
+
+.cta-limitados-section {
+    background-color: #ebe1ee; /* El mismo fondo de tus círculos */
+    padding: 0px 20px;
+    margin-bottom: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .cta-limitados-section {
+        padding: 100px 20px;
+        margin-top: -1px;
+        margin-bottom: -100px;
+    }
+}
+
+.cta-container {
+    max-width: 800px;
+    width: 100%;
+}
+
+.cta-container h4 {
+    font-size: 1.8rem;
+    color: #993479; /* Tu color lila fuerte */
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.cta-container p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+
+/* --- ANIMACIÓN DE APARICIÓN --- */
+.animate-scroll-up {
+    opacity: 0;
+    transform: translateY(40px); /* Empieza 30px abajo */
+    transition: opacity 2.5s ease-out, transform 2.5s ease-out; /* Duración lenta y tranquila */
+}
+
+.animate-scroll-up.visible {
+    opacity: 1;
+    transform: translateY(0); /* Sube a su posición original */
+}
+
+/* --- BOTÓN DE TURNOS GRATIS --- */
+.turnosgratis-action-area {
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 100px;
+    background: #ebe1ee; 
+}
+
+.btn-turnos-gratis {
+    display: inline-block;
+    background-color: var(--color-verde-brand);
+    color: white;
+    padding: 18px 40px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border-radius: 50px; /* Bordes redondeados modernos */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 131, 103, 0.3);
+}
+
+.btn-turnos-gratis:hover {
+    background-color: var(--color-verde-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(102, 131, 103, 0.4);
+}
+
+@media (max-width: 768px) {
+
+    .turnosgratis-action-area {
+        padding-bottom: 80px;
+        margin-top: -1px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------------------- */
+/* Página Atención Personalizada */
+/* ----------------------------- */
+
+
+
+/* --- VARIABLES LOCALES --- 
+   Las definimos dentro de la clase de la sección para no contaminar el :root global */
+.atencion-section {
+    --primary-purple: #993479;
+    --primary-green: #668367;
+    --soft-purple: #9a5c87;
+    --soft-green: #7f9d89;
+    --light-bg: #ebe1ee;
+    --teal: #609895;
+    
+    --card-width: 280px;
+    --card-height: 400px;
+    --carousel-radius: 400px;
+    --transition-speed: 0.8s;
+
+    /* Estilos base solo para esta sección */
+    font-family: var(--futura), sans-serif;
+    color: var(--primary-purple);
+    background-color: var(--light-bg);
+    position: relative;
+    overflow: hidden; /* Para contener las formas flotantes */
+    width: 100%;
+    min-height: 800px; /* Altura mínima para que quepa el carrusel */
+    padding: 40px 0;
+    /* Ajuste de la sección principal para que crezca con el contenido, ESTO ES PORQUE AGREGUÉ LA BOOKING SECTION! */
+    min-height: auto; /* Permitimos que se estire hacia abajo */
+    padding-bottom: 100px;
+}
+
+/* --- FONDO ESPECÍFICO --- */
+.atencion-bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+    background: linear-gradient(135deg, #fdfbfd 0%, var(--light-bg) 100%);
+}
+
+.atencion-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    animation: floatShape 20s infinite alternate ease-in-out;
+}
+
+.shape-1 {
+    width: 500px; height: 500px;
+    background: var(--primary-purple);
+    top: -50px; left: -50px;
+}
+
+.shape-2 {
+    width: 600px; height: 600px;
+    background: var(--primary-green);
+    bottom: -50px; right: -50px;
+    animation-delay: -5s;
+}
+
+@keyframes floatShape {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+/* --- ESTRUCTURA INTERNA --- */
+.atencion-container {
+    position: relative; /* Para ponerse sobre el fondo */
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.atencion-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.atencion-title {
+    font-family: var(--futura), serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-purple);
+    margin: 0;
+    line-height: 1.1;
+}
+
+.atencion-subtitle {
+    font-family: var(--futura), sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--primary-green);
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+.atencion-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    perspective: 1200px;
+    padding: 40px 0;
+}
+
+/* --- CARRUSEL (Estilos funcionales) --- */
+.carousel-container {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+}
+
+.carousel {
+    position: relative;
+    width: var(--carousel-radius);
+    height: var(--carousel-radius);
+    transform-style: preserve-3d;
+    transition: transform var(--transition-speed) cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* --- TARJETAS (Estilo visual) --- */
+.memory-card {
+    position: absolute;
+    width: var(--card-width);
+    height: var(--card-height);
+    left: 50%; top: 50%;
+    margin-left: calc(var(--card-width) / -2);
+    margin-top: calc(var(--card-height) / -2);
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%; height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(153, 52, 121, 0.15);
+}
+
+.memory-card:hover .card-inner {
+    transform: translateY(-10px);
+}
+
+.memory-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%; height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+/* Diseño del Frente */
+.card-front {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    text-align: center;
+    background: linear-gradient(180deg, #ffffff 0%, #fcfcfc 100%);
+}
+
+.card-front::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 6px;
+    background: linear-gradient(90deg, var(--primary-purple), var(--primary-green));
+}
+
+.step-number {
+    position: absolute;
+    top: 20px; right: 20px;
+    font-family: var(--futura), serif;
+    font-size: 3rem;
+    color: rgba(153, 52, 121, 0.05);
+    font-weight: 700;
+}
+
+.icon-circle {
+    /* CAMBIOS PARA ALINEAR CON EL NÚMERO */
+    position: absolute;      /* Lo sacamos del flujo para moverlo arriba */
+    top: 27px;               /* A la misma altura aprox que el step-number */
+    left: 20%;               /* Lo mandamos al medio */
+    transform: translateX(-50%); /* Lo centramos perfectamente */
+    
+    /* Estilos visuales que ya tenías */
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    background-color: var(--light-bg);
+    color: var(--primary-green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+    z-index: 2; /* Para asegurar que quede por encima si algo se cruza */
+}
+
+.memory-card:hover .icon-circle {
+    background-color: var(--primary-green);
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.card-front h3 {
+    font-family: var(--futura), serif;
+    font-size: 1.8rem;
+    color: var(--primary-purple);
+    margin-bottom: 15px;
+    
+    /* AUMENTAMOS ESTO para que el título baje, ya que el icono ahora flota */
+    margin-top: 100px; 
+}
+
+.card-preview {
+    font-size: 0.95rem;
+    color: var(--soft-purple);
+    line-height: 1.6;
+}
+
+.tap-hint {
+    margin-top: 80px;
+    font-size: 0.8rem;
+    color: var(--teal);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tap-hint-back {
+    margin-top: 30px;
+    font-size: 0.8rem;
+    color: var(--teal);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: center;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Diseño del Reverso */
+.card-back {
+    transform: rotateY(180deg);
+    background: var(--primary-purple);
+    color: #ffffff;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card-back h3 {
+    font-family: var(--futura), serif;
+    font-size: 1.6rem;
+    color: var(--light-bg);
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.card-back p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* --- CONTROLES Y FOOTER INTERNO --- */
+.carousel-controls {
+    margin-top: 20px;
+    display: flex;
+    gap: 30px;
+    z-index: 10;
+}
+
+.control-btn {
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-purple);
+    background: transparent;
+    color: var(--primary-purple);
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-btn:hover {
+    background: var(--primary-purple);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(153, 52, 121, 0.3);
+}
+
+.atencion-footer {
+    text-align: center;
+    z-index: 10;
+    margin-top: 30px;
+}
+
+.instructions {
+    font-size: 0.85rem;
+    color: var(--soft-purple);
+    opacity: 0.8;
+}
+
+/* --- RESPONSIVE DE LA SECCIÓN --- */
+@media (max-width: 768px) {
+    .atencion-section {
+        --card-width: 240px;
+        --card-height: 360px;
+        --carousel-radius: 250px;
+        padding: 20px 0;
+    }
+
+    .atencion-title { 
+        font-size: 2.2rem;
+        margin-top: 25px;
+    }
+
+    .atencion-subtitle {
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+        margin-top: 10px;
+        margin-bottom: -80px;
+    }
+
+    .carousel-controls {
+    margin-top: -20px;    }
+    
+    .shape-1 { width: 300px; height: 300px; }
+    .shape-2 { width: 300px; height: 300px; }
+
+    .icon-circle {
+        width: 50px; height: 50px;
+        font-size: 1.5rem;
+        top: 32px; /* Mantenemos la posición arriba */
+    }
+
+    .card-front h3 {
+         margin-top: 90px; /* Ajustamos el texto en móvil */
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+/* ----------------------------- */
+/* SECCIÓN DE BOOKING Y PAGO     */
+/* ----------------------------- */
+
+.booking-section {
+    padding: 80px 20px;
+    background-color: transparent; /* Quitamos el blanco */
+    position: relative;
+    z-index: 1;
+}
+
+.booking-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+/* Título */
+.booking-title {
+    font-family: var(--futura), serif;
+    font-size: 2.5rem;
+    color: var(--primary-purple);
+    margin-top: 80px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    z-index: 2;
+}
+
+.divider-line {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-purple), var(--primary-green));
+    margin-bottom: 40px;
+    border-radius: 2px;
+    z-index: 2;
+}
+
+/* Texto de valor */
+.value-text {
+    font-family: var(--futura), sans-serif;
+    color: var(--soft-purple);
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+    background-color: var(--light-bg);
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: inline-block;
+    z-index: 2;
+}
+
+/* Imagen del Precio */
+.price-image-wrapper {
+    width: 100%;
+    max-width: 500px; /* Tamaño máximo para escritorio */
+    margin-bottom: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border: 1px solid var(--light-bg);
+    z-index: 2;
+}
+
+.price-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.price-image-wrapper:hover .price-img {
+    transform: scale(1.02);
+}
+
+/* Duración */
+.duration-text {
+    font-family: var(--futura), sans-serif;
+    color: var(--soft-purple);
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+    background-color: var(--light-bg);
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: inline-block;
+    z-index: 2;
+}
+
+.duration-text i {
+    color: var(--primary-purple);
+    margin-right: 8px;
+}
+
+/* Contenedor de Pasos */
+.booking-steps-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Hacemos que las cajas de pasos sean un poco más translúcidas 
+   para que se note el fondo difuminado de atrás */
+.step-box {
+    position: relative; /* <-- MUY IMPORTANTE */
+    background: rgba(255, 255, 255, 0.7); /* Blanco con transparencia */
+    backdrop-filter: blur(10px); /* Efecto de vidrio esmerilado */
+    padding: 30px 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px rgba(153, 52, 121, 0.05);
+    /* Hacemos que por defecto sean invisibles hasta que empiece la animación */
+    opacity: 0; 
+    /* Esta propiedad asegura que se queden visibles al terminar la animación */
+    animation-fill-mode: forwards; 
+}
+
+
+/* --- ANIMACIONES DE LAS STEP BOXES --- */
+
+/* 1. Definimos los Keyframes (los movimientos) */
+
+/* De Izquierda a Derecha */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* De Derecha a Izquierda */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* De Abajo hacia Arriba */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 2. Aplicamos las animaciones a las cajas específicas */
+
+/* Caja 1: Izquierda a Derecha */
+.step-box.visible.step-1 {
+    animation: slideInLeft 2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+}
+
+/* Caja 2: Abajo a Arriba */
+.step-box.visible.payment-step {
+    animation: slideInUp 2s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+}
+
+/* Caja 3: Derecha a Izquierda */
+.step-box.visible.step-3 {
+    animation: slideInRight 2s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+}
+
+/* Ajuste preventivo: evitar que el hover interfiera con la animación inicial */
+.step-box:hover {
+    transition: transform 0.9s ease, box-shadow 0.9s ease;
+}
+
+
+/* Badge de número */
+.step-number-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 35px;
+    height: 35px;
+    background-color: var(--primary-green);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-family: var(--futura);
+    box-shadow: 0 4px 10px rgba(102, 131, 103, 0.4);
+}
+
+.step-box h4 {
+    font-family: var(--futura), serif;
+    color: var(--primary-purple);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.step-box p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Botón WhatsApp */
+.btn-whatsapp-booking {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--primary-green);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp-booking:hover {
+    background-color: #1ebc57;
+    transform: scale(1.05);
+}
+
+/* --- MINI TARJETA CBU (Diseño similar a tarjeta de crédito) --- */
+/* La tarjeta bancaria también puede ser un poco transparente */
+.bank-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    border-left: 5px solid var(--primary-purple);
+    /* ... resto de estilos iguales ... */
+}
+
+.bank-header {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--primary-purple);
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding-bottom: 10px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.bank-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    flex-wrap: wrap; /* Para que en móviles no se rompa */
+    padding-left: 10px;
+
+}
+
+.bank-label {
+    color: var(--soft-green);
+    font-weight: 600;
+}
+
+.bank-value {
+    color: #444;
+    font-family: monospace; /* Para que los números se lean mejor */
+    font-size: 1rem;
+    background: rgba(255,255,255,0.8);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* Icono confirmación */
+.icon-confirmation {
+    font-size: 2rem;
+    color: var(--primary-green);
+    margin-top: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    .booking-container {
+    position: relative;
+    z-index: 20; /* Súbelo a 20 para ganarle a cualquier esfera de fondo */
+    width: 100%;
+    max-width: 90%; /* Evita que se pegue a los bordes en móviles */
+    margin: 0 auto;
+    }
+
+    .booking-title {
+        font-size: 1.8rem;
+    }
+    
+    .price-image-wrapper {
+        max-width: 100%;
+    }
+
+    .bank-card {
+        padding: 15px;
+    }
+    
+    .bank-row {
+        flex-direction: column;
+        gap: 2px;
+    }
+    
+    .bank-value {
+        width: 100%; /* Ocupa todo el ancho en móvil para copiar fácil */
+        word-break: break-all;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+                EXTRAS
+   ========================================= */
+
+
+/* --- INICIO PARCHE ANTI-PARPADCEO --- */   
+
+/* 1. Estado inicial: OBLIGATORIO oculto */
+.animate-hidden {
+    opacity: 0;
+    visibility: hidden; /* Esto asegura que no se vea nada al cargar */
+    transition: all 1s cubic-bezier(0.22, 1, 0.36, 1); /* Suavidad del movimiento */
+}
+
+/* 2. Dirección desde donde vienen */
+.animate-left {
+    transform: translateX(-50px); /* Empieza desplazado a la izquierda */
+}
+
+.animate-right {
+    transform: translateX(50px); /* Empieza desplazado a la derecha */
+}
+
+/* 3. Estado FINAL (cuando el JS agrega la clase .visible) */
+.animate-hidden.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0); /* Vuelve a su lugar original */
+}
+
+/* --- FIN PARCHE ANTI-PARPADCEO --- */
