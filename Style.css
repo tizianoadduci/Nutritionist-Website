@@ -1643,11 +1643,48 @@ footer {
 }
 
 .enfoque-decoracion {
-    height: 300px;
+    position: relative;
+    height: 360px;
     overflow: hidden;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Imagen por defecto (escritorio): llena el recuadro recortando */
+.enfoque-decoracion > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+}
+
+/* Efecto glassmorphism: foto completa centrada sobre fondo borroso de la misma imagen */
+.enfoque-decoracion.glass-fill::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--bg);
+    background-size: cover;
+    background-position: center;
+    filter: blur(25px) brightness(0.95) saturate(1.1);
+    transform: scale(1.25);
+    z-index: 0;
+}
+
+.enfoque-decoracion.glass-fill::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(102, 131, 103, 0.18);
+    z-index: 1;
+}
+
+.enfoque-decoracion.glass-fill > img {
+    position: relative;
+    z-index: 2;
+    object-fit: contain;
 }
 @media (max-width: 900px) {
     .enfoque-metodologia {
