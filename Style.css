@@ -3030,7 +3030,7 @@ body.page-sobre-mi #wa-btn {
 /* Imagen del Precio */
 .price-image-wrapper {
     width: 100%;
-    max-width: 500px; /* Tamaño máximo para escritorio */
+    max-width: 320px;
     margin-bottom: 20px;
     border-radius: 15px;
     overflow: hidden;
