@@ -6,6 +6,27 @@
 -Estilos de Atención Personalizada
 */
 
+@font-face {
+    font-family: 'GTProelium';
+    src: url('GTProelium.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DristanStory';
+    src: url('Dristan Story.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('Avenir Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 /* --- VARIABLES DE COLOR (Paleta del Cliente) --- */
 :root {
@@ -29,8 +50,9 @@
     --color-texto-suave: #666666;
     --color-borde: #dcd7d0; 
     /*Fuentes*/
-    --futura: "Futura", "Trebuchet MS", Arial, sans-serif;
-    --nunito: 'Nunito', sans-serif;
+    --futura: 'Avenir', "Trebuchet MS", Arial, sans-serif;
+    --nunito: 'GTProelium', "Trebuchet MS", sans-serif;
+    --dristan: 'DristanStory', cursive;
 
 }
 
@@ -268,20 +290,15 @@ section { padding: 60px 0; }
    ========================================= */
 
 #inicio.hero-video-section {
-    /* Pone la misma imagen que tu video poster */
     position: relative;
-    height: 100vh;
-    min-height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: auto;
+    min-height: 100vh;
+    display: block;
     overflow: hidden;
-    color: var(--text-light);
+    color: var(--text-dark);
     margin-top: -80px; 
     padding-top: 80px;
-    background: url('/img/Miniatura-Video-Frutas.png') no-repeat center center;
-    background-size: cover;
-    background-color: #000; /* Fondo negro por seguridad */
+    background-color: var(--light-bg);
     z-index: 1;
 }
 
@@ -322,6 +339,7 @@ section { padding: 60px 0; }
 }
 /* 3. Contenedor de Textos y Foto */
 .hero-video-content {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -331,6 +349,12 @@ section { padding: 60px 0; }
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+@media (min-width: 769px) {
+    .hero-video-content {
+        min-height: calc(100vh - 80px);
+    }
 }
 
 /* Textos (Izquierda) */
@@ -353,12 +377,11 @@ section { padding: 60px 0; }
 
 .hero-title {
     font-size: 3.5rem;
-    color: #fff;
+    color: var(--primary-purple);
     text-align: left;
     font-weight: bold;
     line-height: 1.2;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 @media (max-width: 768px) {
@@ -406,8 +429,7 @@ section { padding: 60px 0; }
 .hero-subtitle {
     font-size: 1.2rem;
     margin-bottom: 40px;
-    color: #f0f0f0;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    color: var(--text-dark);
 }
 
 /* Foto superpuesta (Derecha) */
@@ -532,6 +554,8 @@ section { padding: 60px 0; }
 .mi-rol-docente-section { background-color: #fff; }
 
 .plan-card {
+    position: relative;
+    z-index: 2;
     background: #fff;
     border: 1px solid #eee;
     padding: 20px;
@@ -540,6 +564,11 @@ section { padding: 60px 0; }
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     padding-bottom: 20px;
     margin-bottom: 50px;
+}
+
+#acompañamientos {
+    position: relative;
+    z-index: 2;
 }
 .plan-card img {
     height: 180px; width: 100%; object-fit: cover;
@@ -970,10 +999,9 @@ footer {
     }
 
     /* AJUSTE PARA EL NUEVO HERO EN MÓVIL */
-        #inicio.hero-video-section {
-        /* Pone la versión mobile de la imagen */
-        background: url('/img/Miniatura-Video-Frutas-Mobile.png') no-repeat center center;
-        background-size: cover;
+    #inicio.hero-video-section {
+        background: none;
+        background-color: var(--light-bg);
         height: auto;
         padding-bottom: 60px;
     }

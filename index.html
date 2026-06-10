@@ -19,11 +19,11 @@
     <link rel="stylesheet" href="Style.css?v=1.4">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-    <link rel="manifest" href="img/site.webmanifest">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="manifest" href="/img/site.webmanifest">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,9 +43,9 @@
 
         <div class="logo">
             <a href="#inicio" class="logo-link">
-        <img src="img/Logo simple verde.png" class="logo-img-small" alt="Mercedes Martin">
+        <img src="/img/Logo simple verde.png" class="logo-img-small" alt="Mercedes Martin">
         <div class="logo-text-group">
-            <span class="logo-title">LIC. MERCEDES</span>
+            <span class="logo-title">MERCEDES MARTIN</span>
             <p>Embarazo - Fertilidad - Postparto</p>
         </div>
             </a>   
@@ -55,13 +55,13 @@
             <ul id="nav-menu">
                 <li><a href="#inicio" class="nav-link">Inicio</a></li>
                 <li><a href="sobremi.html" class="nav-link">Sobre mi</a></li>
-                <li><a href="turnos.html" class="nav-link">Turnos</a></li>
+                <li><a href="dudas.html" class="nav-link">¿Dudas?</a></li>
                 <li><a href="#newsletter" class="nav-link">Newsletter</a></li>
                 <li class="dropdown">
                     <span class="dropbtn nav-link" id="formaciones-toggle">Acompañamientos ▼</span>
                     <div class="dropdown-content">
-                        <a href="atencionPersonalizada.html" class="nav-link">Atención Personalizada</a>
-                        <a href="embarazo.html" class="nav-link">Embarazos</a>
+                        <a href="sesiones-individuales.html" class="nav-link">Sesiones Individuales</a>
+                        <a href="acompanamiento-integral.html" class="nav-link">Acompañamiento Integral</a>
                     </div>
                 </li>
             </ul>
@@ -71,24 +71,24 @@
 
 <main>
     <section id="inicio" class="hero-video-section">
-    <video id="heroVideoIndex" class="video-bg" autoplay muted loop playsinline src="img/VideoFrutas.mp4" 
-    poster="img/Miniatura-Video-Frutas.png">
-    </video>
-    <div class="video-overlay"></div>
+    <div class="atencion-bg">
+        <div class="atencion-shape shape-1"></div>
+        <div class="atencion-shape shape-2"></div>
+    </div>
 
     <div class="container hero-video-content">
         <div class="welcome-text-video">
             <div class="hero-tag animate-hidden animate-down">
-                Lic. Mercedes Martin
+                Lic. En Nutrición M.P.:4490
             </div>
             <h1 class="hero-title animate-hidden animate-left">
-                Fertilidad y acompañamiento pre/post-parto
+                Embarazo, fertilidad y post-parto
             </h1>
             <p class="hero-subtitle animate-hidden animate-left delay-200">
-                Te acompaño en tu camino hacia la maternidad con una mirada integrativa y humana.
+                Te acompaño en tu camino de maternidad con una mirada integral.
             </p>
             <a href="https://wa.me/5492235431715" target="_blank" class="btn btn-whatsapp-hero animate-hidden animate-up">
-                <i class="fab fa-whatsapp"></i> Solicitar turno
+                <i class="fab fa-whatsapp"></i> Escribime y te cuento más!
             </a>
         </div>
 
@@ -96,24 +96,25 @@
             <img src="img/Foto1.jpg" alt="Lic. Mercedes Martin">
         </div>
     </div>
-</section>
 
-        <div class="container">
-            
-            <h2 class="subtituloAcompañamientos">MIS ACOMPAÑAMIENTOS</h2>
+    <div class="container" id="acompañamientos">
+
+        <h2 class="subtituloAcompañamientos">¿Cómo te puedo acompañar?</h2>
             
             <div class="plans-grid">
                 <div class="plan-card">
-                    <img src="img/Logo 3 verde.png" alt="Programa Embarazo">
-                    <h3>Programa completo <br> Acompañamiento en el Embarazo</h3>
-                    <p>Acompañamiento personalizado durante 2 meses para alimentarte de una manera completa y segura y así, proteger y darle lo mejor a tu bebé ♥</p>
-                    <a href="embarazo.html" class="btn btn-tertiary">MÁS INFO</a>
+                    <img src="/img/Logo 3 verde.png" alt="Programa Embarazo">
+                    <h3>Programa Nutrición Integral<br>
+                    para un nuevo comienzo
+                    </h3>
+                    <p>Acompañamiento personalizado en tu embarazo durante 2 meses para que te sientas segura con tu alimentación en esta etapa ♥️</p>
+                    <a href="acompanamiento-integral.html" class="btn btn-tertiary">MÁS INFO</a>
                 </div>
                 <div class="plan-card">
-                    <img src="img/Logo 3 verde.png" alt="Sesiones individuales">
+                    <img src="/img/Logo 3 verde.png" alt="Sesiones individuales">
                     <h3>Sesiones individuales <br> Embarazo, Fertilidad y Post-Parto</h3>
-                    <p>Consultas personalizadas para abordar las necesidades nutricionales específicas durante cada etapa del proceso reproductivo.</p>
-                    <a href="atencionPersonalizada.html" class="btn btn-tertiary">MÁS INFO</a>
+                    <p>Consultas personalizadas para abordar las necesidades específicas durante cada etapa.</p>
+                    <a href="sesiones-individuales.html" class="btn btn-tertiary">MÁS INFO</a>
                 </div>
                 
             </div>
@@ -167,6 +168,7 @@
                     <a href="https://www.instagram.com/mermartin.nutricion?igsh=eTJwNXUyc2ZwYndt" target="_blank"><i class="fab fa-instagram"></i></a>
                     <a href="https://www.linkedin.com/in/mercedesmartinelizondo/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                     <a href="https://wa.me/5492235431715?text=Hola!, quisiera que%20me%20envíes%20más%20info%20sobre%20tu%20acompañamiento%20nutricional%20!." target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.youtube.com/@mermartin.nutricion" target="_blank"><i class="fab fa-youtube"></i></a>
 
                 </div>
             </div>
@@ -178,22 +180,22 @@
     <div class="container footer-content">
 
         <div class="footer-brand">
-            <img src="img/Logo simple violeta.png" alt="Logo Mercedes Martin">
-            <p>ESPACIO DE SALUD INTEGRATIVA</p>
+            <img src="/img/Logo simple violeta.png" alt="Logo Mercedes Martin">
         </div>
 
         <div class="footer-about">
             <h4>MERCEDES MARTIN NUTRICIÓN</h4>
-            <p>Acompañándote en procesos de transformación desde una mirada integradora, funcional y humana.</p>
+            <p>Te acompaño en tu camino de maternidad con una mirada integral.</p>
         </div>
         
         <div class="useful-links">
             <h4>ENLACES ÚTILES:</h4>
             <ul>
-                <li><a href="#sobre-mi">Sobre mí</a></li>
-                <li><a href="#Mis-Acompañamientos">Acompañamientos</a></li>
-                <li><a href="turnos.html" class="nav-link">Turnos</a></li>
-                <li><a href="politica-de-privacidad.html">Política de privacidad</a></li>   
+                <li><a href="sobremi.html">Sobre mí</a></li>
+                <li><a href="dudas.html" class="nav-link">¿Dudas?</a></li>
+                <li><a href="#acompañamientos">Acompañamientos</a></li>
+                <li><a href="#newsletter" class="nav-link">Contacto</a></li>
+                <li><a href="politica-de-privacidad.html">Política de privacidad</a></li>
             </ul>
         </div>
     </div>
@@ -202,7 +204,7 @@
 
     <div class="footer-bottom">
         <button class="btn scroll-to-top">VOLVER ARRIBA</button>
-        <p class="copyright-text">© 2025 Mercedes Martin – Todos los derechos reservados.</p>
+        <p class="copyright-text">© <span id="copyright-year"></span> Mercedes Martin – Todos los derechos reservados.</p>
         <p>Diseño web:  <a href="https://www.linkedin.com/in/tiziano-vidal-adduci-445776273/" target="_blank">Tiziano Thomas Vidal Adduci</a></p>
     </div>
 

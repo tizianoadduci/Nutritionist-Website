@@ -106,11 +106,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 7. AÑO ACTUALIZADO AUTOMÁTICAMENTE EN EL FOOTER
-    const footerText = document.querySelector('.footer-bottom p:first-child');
-    if (footerText) {
-        const currentYear = new Date().getFullYear();
-        // Busca 4 dígitos y los reemplaza por el año actual
-        footerText.innerHTML = footerText.innerHTML.replace(/\d{4}/, currentYear);
+    const yearSpan = document.getElementById('copyright-year');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
     }
 
     // 8. ANIMACIÓN DEL SUBTÍTULO "MIS ACOMPAÑAMIENTOS"
