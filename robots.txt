@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Evitamos que Google muestre la página de 'Gracias' en los resultados
+# para que la gente no entre ahí sin haber completado el formulario/turno.
+Disallow: /gracias.html
+
+# Indica dónde está tu mapa del sitio (Reemplaza con tu dominio real)
+Sitemap: https://www.mercedesmartin.com.ar/sitemap.xml
