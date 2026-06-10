@@ -1644,7 +1644,7 @@ footer {
 
 .enfoque-decoracion {
     position: relative;
-    height: 360px;
+    height: 320px;
     overflow: hidden;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 20px;
@@ -1685,6 +1685,9 @@ footer {
     position: relative;
     z-index: 2;
     object-fit: contain;
+    /* Acercamos: recorta la mesa abajo y un poco la cabecera arriba */
+    transform: scale(1.6) translateY(3%);
+    transform-origin: center;
 }
 @media (max-width: 900px) {
     .enfoque-metodologia {
