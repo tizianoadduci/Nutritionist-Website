@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <!-- Fondo lavanda -->
+  <rect width="1280" height="720" fill="#ede3f5"/>
+
+  <!-- Swirl esquina superior izquierda -->
+  <g stroke="white" stroke-width="18" fill="none" opacity="0.75">
+    <path d="M -40 160 Q 80 -20 260 40 Q 400 90 320 220 Q 260 310 140 260"/>
+    <path d="M -80 300 Q 60 100 280 160 Q 460 210 380 380"/>
+  </g>
+
+  <!-- Swirl esquina inferior derecha -->
+  <g stroke="white" stroke-width="18" fill="none" opacity="0.75">
+    <path d="M 1320 560 Q 1200 740 1020 680 Q 880 630 960 500 Q 1020 410 1140 460"/>
+    <path d="M 1360 420 Q 1220 620 1000 560 Q 820 510 900 340"/>
+  </g>
+
+  <!-- Texto editable: cambiá el número entre $ y el cierre del tag -->
+  <text
+    x="640"
+    y="390"
+    font-family="'Nunito', 'Trebuchet MS', Arial Rounded MT Bold, sans-serif"
+    font-size="130"
+    font-weight="700"
+    fill="#8b3a72"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    letter-spacing="4"
+  >$30.000</text>
+</svg>
