@@ -3019,18 +3019,20 @@ body.page-sobre-mi #wa-btn {
     font-family: var(--futura), sans-serif;
     color: var(--soft-purple);
     font-size: 1.1rem;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     background-color: var(--light-bg);
     padding: 10px 20px;
     border-radius: 50px;
-    display: inline-block;
+    display: block;
+    width: 320px;
+    text-align: center;
     z-index: 2;
 }
 
 /* Imagen del Precio */
 .price-image-wrapper {
     width: 100%;
-    max-width: 320px;
+    width: 320px;
     margin-bottom: 20px;
     border-radius: 15px;
     overflow: hidden;
@@ -3055,11 +3057,14 @@ body.page-sobre-mi #wa-btn {
     font-family: var(--futura), sans-serif;
     color: var(--soft-purple);
     font-size: 1.1rem;
+    margin-top: 0;
     margin-bottom: 50px;
     background-color: var(--light-bg);
     padding: 10px 20px;
     border-radius: 50px;
-    display: inline-block;
+    display: block;
+    width: 320px;
+    text-align: center;
     z-index: 2;
 }
 
