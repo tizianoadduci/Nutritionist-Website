@@ -1974,16 +1974,20 @@ body.page-sobre-mi #wa-btn {
 
     .hero-text-wrapper {
         text-align: center; /* Centramos todo en mobile */
-        margin-top: -50px;
+        margin-top: 0;
     }
 
     .hero-text-wrapper h2{
-        margin-top: -30px;
-        margin-bottom: -60px !important;
+        /* Antes: margin-top:-30px y margin-bottom:-60px!important, valores "a ojo"
+           calibrados para el texto viejo (más corto). Al sumar texto, ese margen
+           negativo montaba el subtítulo sobre el título. Pasamos a flujo normal
+           con espaciado positivo, robusto ante cualquier largo de texto. */
+        margin-top: 0;
+        margin-bottom: 30px !important;
     }
 
     .header-box{
-        margin-top: -30px;
+        margin-top: 0;
     }
 
     .left-column::after {
@@ -2126,7 +2130,7 @@ body.page-sobre-mi #wa-btn {
         flex-direction: column; /* En mobile, uno arriba del otro */
         text-align: center;     /* Centramos el texto en mobile */
         gap: 30px;
-        margin-top: 50px;       /* Menos separación que en desktop (130px) */
+        margin-top: 0;          /* El espacio con el título lo da el margin-bottom del h2 */
     }
     
     .hero-video-content-embarazo h2 {
@@ -2801,13 +2805,13 @@ body.page-sobre-mi #wa-btn {
     /* CAMBIOS PARA ALINEAR CON EL NÚMERO */
     position: absolute;      /* Lo sacamos del flujo para moverlo arriba */
     top: 27px;               /* A la misma altura aprox que el step-number */
-    left: 20%;               /* Lo mandamos al medio */
-    transform: translateX(-50%); /* Lo centramos perfectamente */
-
-    /* El transform propio saca a la bolita del plano del padre y la convierte
-       en su propia capa 3D, escapando al backface-visibility del .card-front.
-       Por eso (sobre todo en iOS Safari) se "atraviesa" y se ve del otro lado
-       al girar la card. Ocultamos su propia cara trasera para evitarlo. */
+    /* Centramos SIN transform a propósito. Un transform propio promueve a la
+       bolita a su propia capa de composición, que escapa al backface-visibility
+       del .card-front (bug clásico de iOS Safari): por eso se "atravesaba" y se
+       veía del otro lado al girar la card. Sin transform, se pinta dentro del
+       plano del frente y se oculta junto con él, igual que el número (que está
+       absoluto pero sin transform y nunca se atravesó). */
+    left: calc(20% - 30px); /* 30px = mitad del ancho (60px): centro queda en 20% */
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 
