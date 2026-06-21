@@ -1983,7 +1983,7 @@ body.page-sobre-mi #wa-btn {
            negativo montaba el subtítulo sobre el título. Pasamos a flujo normal
            con espaciado positivo, robusto ante cualquier largo de texto. */
         margin-top: 0;
-        margin-bottom: 30px !important;
+        margin-bottom: 18px !important;
     }
 
     .header-box{
