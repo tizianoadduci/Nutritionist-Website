@@ -2107,20 +2107,26 @@ body.page-sobre-mi #wa-btn {
 /* --- RESPONSIVE MOBILE --- */
 @media (max-width: 768px) {
     .hero-video-section-embarazo {
-        /* En mobile, a veces 100vh da problemas con la barra del navegador */
-        /* Usamos svh si el navegador lo soporta, o 100vh como fallback */
-        height: 100vh; 
+        /* Antes era height:100vh fijo + overflow:hidden, lo que recortaba el
+           título cuando el contenido (apilado en mobile) superaba la pantalla.
+           Ahora dejamos que la sección crezca con el contenido. */
+        height: auto;
+        min-height: 100vh;      /* Llena la pantalla si el contenido es corto */
+        padding: 110px 0 60px;  /* Aire debajo del header y abajo */
         text-align: center; /* Centramos el texto en mobile */
     }
 
     .hero-video-content-embarazo {
         align-items: center; /* Centrar el bloque */
+        justify-content: flex-start; /* Alinear arriba: el título no se corta */
+        min-height: auto;    /* No forzar 100vh para no recortar por centrado */
     }
 
     .sub-text-container {
         flex-direction: column; /* En mobile, uno arriba del otro */
         text-align: center;     /* Centramos el texto en mobile */
         gap: 30px;
+        margin-top: 50px;       /* Menos separación que en desktop (130px) */
     }
     
     .hero-video-content-embarazo h2 {
@@ -2755,6 +2761,7 @@ body.page-sobre-mi #wa-btn {
 .card-front, .card-back {
     position: absolute;
     width: 100%; height: 100%;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 20px;
     overflow: hidden;
@@ -2796,7 +2803,14 @@ body.page-sobre-mi #wa-btn {
     top: 27px;               /* A la misma altura aprox que el step-number */
     left: 20%;               /* Lo mandamos al medio */
     transform: translateX(-50%); /* Lo centramos perfectamente */
-    
+
+    /* El transform propio saca a la bolita del plano del padre y la convierte
+       en su propia capa 3D, escapando al backface-visibility del .card-front.
+       Por eso (sobre todo en iOS Safari) se "atraviesa" y se ve del otro lado
+       al girar la card. Ocultamos su propia cara trasera para evitarlo. */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
     /* Estilos visuales que ya tenías */
     width: 60px; height: 60px;
     border-radius: 50%;
