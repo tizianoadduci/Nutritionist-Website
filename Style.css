@@ -2771,7 +2771,17 @@ body.page-sobre-mi #wa-btn {
     overflow: hidden;
     background: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.8);
+    /* La visibilidad cambia a la mitad del giro (0.4s = mitad de los 0.8s de la
+       animación), cuando la card está de canto y el cambio no se percibe. */
+    transition: visibility 0s linear 0.4s;
 }
+
+/* backface-visibility solo NO alcanza: en iOS la bolita (.icon-circle) se
+   renderiza en su propia capa y se "filtra" a través del dorso al girar.
+   Ocultamos la cara que queda de espaldas con visibility:hidden, que sí oculta
+   de forma confiable a TODOS los hijos en todos los navegadores. */
+.memory-card.flipped .card-front { visibility: hidden; }
+.memory-card:not(.flipped) .card-back { visibility: hidden; }
 
 /* Diseño del Frente */
 .card-front {
