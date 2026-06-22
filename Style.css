@@ -2771,17 +2771,7 @@ body.page-sobre-mi #wa-btn {
     overflow: hidden;
     background: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.8);
-    /* La visibilidad cambia a la mitad del giro (0.4s = mitad de los 0.8s de la
-       animación), cuando la card está de canto y el cambio no se percibe. */
-    transition: visibility 0s linear 0.4s;
 }
-
-/* backface-visibility solo NO alcanza: en iOS la bolita (.icon-circle) se
-   renderiza en su propia capa y se "filtra" a través del dorso al girar.
-   Ocultamos la cara que queda de espaldas con visibility:hidden, que sí oculta
-   de forma confiable a TODOS los hijos en todos los navegadores. */
-.memory-card.flipped .card-front { visibility: hidden; }
-.memory-card:not(.flipped) .card-back { visibility: hidden; }
 
 /* Diseño del Frente */
 .card-front {
@@ -2815,15 +2805,14 @@ body.page-sobre-mi #wa-btn {
     /* CAMBIOS PARA ALINEAR CON EL NÚMERO */
     position: absolute;      /* Lo sacamos del flujo para moverlo arriba */
     top: 27px;               /* A la misma altura aprox que el step-number */
-    /* Centramos SIN transform a propósito. Un transform propio promueve a la
-       bolita a su propia capa de composición, que escapa al backface-visibility
-       del .card-front (bug clásico de iOS Safari): por eso se "atravesaba" y se
-       veía del otro lado al girar la card. Sin transform, se pinta dentro del
-       plano del frente y se oculta junto con él, igual que el número (que está
-       absoluto pero sin transform y nunca se atravesó). */
+    /* La bolita debe comportarse EXACTAMENTE como el número (.step-number):
+       hijo absoluto, SIN transform, SIN z-index y SIN backface-visibility propio.
+       En iOS Safari cualquiera de esas propiedades promueve al elemento a su
+       propia capa de GPU, que se compone aparte y NO respeta el
+       backface-visibility del .card-front -> por eso seguía visible sobre el
+       dorso al girar. El número nunca tuvo esas props y nunca se atravesó.
+       Dejándola "plana" se aplana dentro del frente y se oculta junto con él. */
     left: calc(20% - 30px); /* 30px = mitad del ancho (60px): centro queda en 20% */
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
 
     /* Estilos visuales que ya tenías */
     width: 60px; height: 60px;
@@ -2835,7 +2824,8 @@ body.page-sobre-mi #wa-btn {
     align-items: center;
     font-size: 2rem;
     transition: all 0.3s ease;
-    z-index: 2; /* Para asegurar que quede por encima si algo se cruza */
+    /* Sin z-index a propósito: ya queda por encima del número por orden del DOM,
+       y un z-index la promovería a una capa que se filtra sobre el dorso en iOS. */
 }
 
 .memory-card:hover .icon-circle {
