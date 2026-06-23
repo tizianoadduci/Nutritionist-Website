@@ -1997,7 +1997,7 @@ body.page-sobre-mi #wa-btn {
     .left-column {
         border-bottom: 1px solid rgba(235, 225, 238, 0.3); /* Línea horizontal en mobile */
         padding-bottom: 30px;
-        margin-bottom: 30px;
+        margin-bottom: 0; /* La separación bajo la línea la da el gap del contenedor (30px) -> línea centrada */
     }
 }
 
@@ -2031,7 +2031,7 @@ body.page-sobre-mi #wa-btn {
         border-right: none;
         border-bottom: 1px solid rgba(235, 225, 238, 0.3);
         padding-bottom: 30px;
-        margin-bottom: 30px;
+        margin-bottom: 0; /* La separación bajo la línea la da el gap del contenedor (30px) -> línea centrada */
         text-align: center;
     }
     
