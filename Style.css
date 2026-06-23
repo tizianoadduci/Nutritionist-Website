@@ -2135,7 +2135,7 @@ body.page-sobre-mi #wa-btn {
     
     .hero-video-content-embarazo h2 {
         margin-top: 0; /* Quitamos el margen negativo en mobile */
-        margin-bottom: 50px; /* Más separación con el subtitulo */
+        margin-bottom: 70px; /* Más separación con el subtitulo */
         font-size: 2.2rem;
     }
 
