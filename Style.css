@@ -2116,7 +2116,7 @@ body.page-sobre-mi #wa-btn {
            Ahora dejamos que la sección crezca con el contenido. */
         height: auto;
         min-height: 100vh;      /* Llena la pantalla si el contenido es corto */
-        padding: 110px 0 60px;  /* Aire debajo del header y abajo */
+        padding: 85px 0 60px;   /* Subimos el titulo reduciendo padding-top */
         text-align: center; /* Centramos el texto en mobile */
     }
 
@@ -2135,6 +2135,7 @@ body.page-sobre-mi #wa-btn {
     
     .hero-video-content-embarazo h2 {
         margin-top: 0; /* Quitamos el margen negativo en mobile */
+        margin-bottom: 50px; /* Más separación con el subtitulo */
         font-size: 2.2rem;
     }
 
